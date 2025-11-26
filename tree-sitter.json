@@ -9,7 +9,8 @@
         ".razor"
       ],
       "injection-regex": "^razor$",
-      "highlights": "queries/highlights.scm"
+      "highlights": "queries/highlights.scm",
+      "injections": "queries/injections.scm"
     }
   ],
   "metadata": {
