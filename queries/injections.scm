@@ -1,7 +1,7 @@
 ; Injections pour JavaScript, CSS et C#
 
 ; Injection JavaScript dans les attributs onclick, onchange, etc.
-(_html_attribute
+(html_attribute
   (html_attribute_name) @_attr_name
   (#match? @_attr_name "^(onclick|onchange|onload|onerror|onsubmit|onfocus|onblur|onkeydown|onkeyup|onkeypress|onmousedown|onmouseup|onmouseover|onmouseout|onmouseenter|onmouseleave|ondblclick|oncontextmenu|onscroll|onresize|oninput|oninvalid|onselect|onreset)$")
   (html_attribute_value) @injection.content

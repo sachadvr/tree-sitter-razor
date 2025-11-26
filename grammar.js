@@ -107,7 +107,7 @@ module.exports = grammar(CSHARP, {
     _razor_marker: (_) => token("@"),
 
     razor_escape: ($) =>
-      seq(alias(/@{2}/, "at_at_escape"), alias($._html_text, $.element)),
+      seq(alias(/@{2}/, "at_at_escape"), alias($.html_text, $.element)),
 
     razor_page_directive: ($) =>
       seq(alias(seq($._razor_marker, "page"), "at_page"), $.string_literal),
@@ -426,8 +426,10 @@ module.exports = grammar(CSHARP, {
     razor_attribute_value: ($) =>
       seq('"', optional($.modifier), $.expression, '"'),
 
-    _html_attribute: ($) =>
+    html_attribute: ($) =>
       seq($.html_attribute_name, "=", $.html_attribute_value),
+
+    boolean_html_attribute: (_) => /[a-zA-Z0-9-:]+/,
 
     razor_html_attribute: ($) =>
       seq($.razor_attribute_name, optional(seq("=", $.razor_attribute_value))),
@@ -441,8 +443,8 @@ module.exports = grammar(CSHARP, {
             prec.left(
               seq(
                 choice(
-                  $._html_attribute,
-                  $._boolean_html_attribute,
+                  $.html_attribute,
+                  $.boolean_html_attribute,
                   $.razor_html_attribute,
                 ),
                 optional(" "),

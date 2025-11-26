@@ -11567,7 +11567,7 @@
           "type": "ALIAS",
           "content": {
             "type": "SYMBOL",
-            "name": "_html_text"
+            "name": "html_text"
           },
           "named": true,
           "value": "element"
@@ -13194,7 +13194,7 @@
         "value": ".|\\n|\\r"
       }
     },
-    "_tag_name": {
+    "tag_name": {
       "type": "PATTERN",
       "value": "[a-zA-Z0-9-:]+"
     },
@@ -13207,7 +13207,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_tag_name"
+          "name": "tag_name"
         },
         {
           "type": "STRING",
@@ -13215,7 +13215,7 @@
         }
       ]
     },
-    "_html_attribute_name": {
+    "html_attribute_name": {
       "type": "PATTERN",
       "value": "[a-zA-Z0-9-:]+"
     },
@@ -13223,7 +13223,7 @@
       "type": "PATTERN",
       "value": "[a-zA-Z0-9-:]+"
     },
-    "_html_attribute_value": {
+    "html_attribute_value": {
       "type": "SEQ",
       "members": [
         {
@@ -13265,7 +13265,7 @@
         }
       ]
     },
-    "_html_text": {
+    "html_text": {
       "type": "PATTERN",
       "value": "[^<>&@.(\\s]([^<>&@]*[^<>&@\\s])?"
     },
@@ -13298,12 +13298,12 @@
         }
       ]
     },
-    "_html_attribute": {
+    "html_attribute": {
       "type": "SEQ",
       "members": [
         {
           "type": "SYMBOL",
-          "name": "_html_attribute_name"
+          "name": "html_attribute_name"
         },
         {
           "type": "STRING",
@@ -13311,9 +13311,13 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_html_attribute_value"
+          "name": "html_attribute_value"
         }
       ]
+    },
+    "boolean_html_attribute": {
+      "type": "PATTERN",
+      "value": "[a-zA-Z0-9-:]+"
     },
     "razor_html_attribute": {
       "type": "SEQ",
@@ -13354,7 +13358,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_tag_name"
+          "name": "tag_name"
         },
         {
           "type": "CHOICE",
@@ -13372,11 +13376,11 @@
                       "members": [
                         {
                           "type": "SYMBOL",
-                          "name": "_html_attribute"
+                          "name": "html_attribute"
                         },
                         {
                           "type": "SYMBOL",
-                          "name": "_boolean_html_attribute"
+                          "name": "boolean_html_attribute"
                         },
                         {
                           "type": "SYMBOL",
@@ -13430,7 +13434,7 @@
                       },
                       {
                         "type": "SYMBOL",
-                        "name": "_html_text"
+                        "name": "html_text"
                       }
                     ]
                   }

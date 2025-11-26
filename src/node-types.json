@@ -1613,6 +1613,11 @@
     }
   },
   {
+    "type": "boolean_html_attribute",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "boolean_literal",
     "named": true,
     "fields": {}
@@ -2558,11 +2563,23 @@
       "required": false,
       "types": [
         {
+          "type": "boolean_html_attribute",
+          "named": true
+        },
+        {
           "type": "element",
           "named": true
         },
         {
+          "type": "html_attribute",
+          "named": true
+        },
+        {
           "type": "html_comment",
+          "named": true
+        },
+        {
+          "type": "html_text",
           "named": true
         },
         {
@@ -2627,6 +2644,10 @@
         },
         {
           "type": "razor_while",
+          "named": true
+        },
+        {
+          "type": "tag_name",
           "named": true
         }
       ]
@@ -3319,6 +3340,49 @@
       "types": [
         {
           "type": "expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "html_attribute",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "html_attribute_name",
+          "named": true
+        },
+        {
+          "type": "html_attribute_value",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "html_attribute_name",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "html_attribute_value",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "razor_explicit_expression",
+          "named": true
+        },
+        {
+          "type": "razor_implicit_expression",
           "named": true
         }
       ]
@@ -7909,6 +7973,11 @@
     }
   },
   {
+    "type": "tag_name",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "throw_expression",
     "named": true,
     "fields": {},
@@ -9151,6 +9220,10 @@
   {
     "type": "hidden",
     "named": false
+  },
+  {
+    "type": "html_text",
+    "named": true
   },
   {
     "type": "if",

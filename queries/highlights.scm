@@ -1,9 +1,9 @@
 ; Highlights pour les nodes HTML nommés
 
-(tag_name) @tag
-(html_attribute_name) @attribute
-(html_attribute_value) @string
-(html_text) @text
+(element (tag_name) @tag)
+(element (html_attribute (html_attribute_name) @attribute))
+(element (html_attribute (html_attribute_value) @string))
+(element (html_text) @text)
 
 ; Razor expressions
 (razor_explicit_expression) @razor.expression
@@ -47,6 +47,3 @@
 ; Razor attributes
 (razor_html_attribute) @razor.attribute
 (razor_attribute_name) @razor.attribute.name
-
-; HTML elements
-(element) @tag
